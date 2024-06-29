@@ -1,0 +1,54 @@
+.search-page-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    /* background-image: url('https://res.cloudinary.com/dt54ntfw8/image/upload/v1719657612/cute-and-colorful-doodle-monster-created-with-ai-tools-photo_om1oad.jpg'); */
+    background-size: cover;
+    background-color: rgba(42, 41, 41, 0.11);
+}
+.search-form{
+    display: flex;
+    align-items: center;
+    width:500px;
+}
+
+.search_by{
+    background-color:rgb(165, 57, 242);
+    height: 50px;
+    color:white;
+    border: 0px;
+    padding: 5px;
+    font-weight: bold;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+}
+
+.search_input{
+    height:36px;
+    width:100%;
+    padding: 5px;
+    border: 2px solid rgb(165, 57, 242);
+}
+
+.search_input:focus{
+    outline: none;
+}
+
+.search_button{
+    background-color:rgb(165, 57, 242);
+    height:50px;
+    border: 0px solid;
+    color:#ffffff;
+    font-weight: bold;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.search_button:hover{
+    color:#ffffff;
+    background-color:rgb(165, 57, 242);
+}

@@ -1,0 +1,24 @@
+.success{
+    height:100px;
+    width:100px;
+}
+
+.success_msg{
+    color:rgb(9, 171, 9);
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.login-back-button{
+    background-color: black;
+    color:#ffffff;
+    font-weight: bold;
+    font-family: 'Roboto';
+    border-radius: 5px;
+    width:150px;
+    height:30px;
+    border:0px solid;
+    margin-top: 10px;
+    cursor: pointer;
+}

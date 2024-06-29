@@ -1,0 +1,74 @@
+###REGISTRATION OF USER###
+POST http://localhost:3000/register/
+Content-Type: application/json
+
+{
+    "email":"rakesh@gmail.com",
+    "password":"rakesh123",
+    "username":"Rocky Rakesh"
+}
+
+###LOGIN USING CREDENTIALS###
+
+POST http://localhost:3000/login/ 
+Content-Type: application/json
+
+{
+    "email":"bit",
+    "password":"bit123"
+}
+
+
+###
+
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+    "email":"rakeshmodi092@gmail.com",
+    "password":"Rakesh123"
+}
+
+###
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+    "email":"rakesh@gmail.com",
+    "password":"rakesh123"
+}
+
+###
+GET http://localhost:3000/breweries/city/america
+
+###
+GET http://localhost:3000/breweries/name/america
+
+###
+GET http://localhost:3000/breweries/type/micro
+
+###
+GET http://localhost:3000/breweries/by_city/india
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJha2VzaG1vZGkwOTJAZ21haWwuY29tIiwidXNlcm5hbWUiOiJSYWtlc2giLCJpYXQiOjE3MTk2NDIyNDN9.7qVdt1yF5P283B2oDxow_MnMAoxHe7D9d7jHhKVx0wA
+
+###
+POST http://localhost:3000/brewery/9c5a66c8-cc13-416f-a5d9-0a769c87d318/review
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJha2VzaEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IlJvY2t5IFJha2VzaCIsImlhdCI6MTcxOTY1MzY3MH0.5hzU5dRKUp4ebOmS5Fqk7ZByTp9sCVZI1AuA09arfMw
+
+
+{
+    "rating": 5,
+    "description": "very Good Beer I liked It."
+}
+
+###
+GET http://localhost:3000/brewery/9c5a66c8-cc13-416f-a5d9-0a769c87d318/reviews
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJha2VzaG1vZGkwOTJAZ21haWwuY29tIiwidXNlcm5hbWUiOiJSYWtlc2giLCJpYXQiOjE3MTk2NDQ2NTR9.wjnDP6YAVgt8e-8yXP4G42px-OBlN4sQchWYRaaZhtA
+
+###
+DELETE http://localhost:3000/brewery/9c5a66c8-cc13-416f-a5d9-0a769c87d318/review
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJha2VzaG1vZGkwOTJAZ21haWwuY29tIiwidXNlcm5hbWUiOiJSYWtlc2giLCJpYXQiOjE3MTk2NDQ2NTR9.wjnDP6YAVgt8e-8yXP4G42px-OBlN4sQchWYRaaZhtA
