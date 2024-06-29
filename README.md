@@ -4,7 +4,7 @@
 
 The Brewery Review Application is a web-based platform that allows users to search for breweries, view detailed information about them, and leave reviews. The application provides an intuitive interface for users to find breweries by name, city, or type, and offers a robust review system where users can rate and comment on their experiences.
 
-## Interested to add a review on our website then look out breweries-add-reviews-web.vercel.app
+## Interested to add a review on our website then look out https://breweries-add-reviews-web-app.vercel.app/
 ## Key Features
 
 1. **User Authentication**:
