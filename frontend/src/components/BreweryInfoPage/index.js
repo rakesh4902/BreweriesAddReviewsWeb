@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import { useParams } from 'react-router-dom';
 import Header from '../Header';
@@ -11,6 +11,7 @@ const BreweryInfoPage = () => {
   const [description, setDescription] = useState('');
   const [reviews, setReviews] = useState([]);
   const [username, setUsername] = useState('');
+  const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
     fetchBreweryReviews();
@@ -72,9 +73,9 @@ const BreweryInfoPage = () => {
           Authorization: `Bearer ${jwtToken}`,
         },
       });
+
       if (response.ok) {
         const data = await response.json();
-        
         const reviewsWithColor = data.map(review => ({
           ...review,
           color: getRandomColor()
@@ -85,6 +86,8 @@ const BreweryInfoPage = () => {
       }
     } catch (error) {
       console.error('Error fetching brewery reviews:', error);
+    } finally {
+      setIsLoading(false); 
     }
   };
 
@@ -102,58 +105,63 @@ const BreweryInfoPage = () => {
   };
 
   return (
-    <><Header/>
-    <div className="rating_reviews_container">
-      <h1 className="add_review_label">Add Your Review</h1>
-      <h1 className="hello_name">Hello {username}</h1>
-      <form className="star-rating-container" onSubmit={handleSubmit}>
-        <div className='star-rating'>
-          {[1, 2, 3, 4, 5].map((star, index) => (
-            <span
-              key={index}
-              className={`star ${rating >= star ? 'filled' : ''} ${hover >= star ? 'hover' : ''}`}
-              onMouseEnter={() => handleMouseEnter(star)}
-              onMouseLeave={handleMouseLeave}
-              onClick={() => handleClick(star)}
-            >
-              ★
-            </span>
-          ))}
-        </div>
-        <textarea
-          placeholder="Write your review..."
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <button type="submit" className='submit-button'>
-          Submit
-        </button>
-      </form>
-      <div>
-        <h1 className="reviews_label">Reviews</h1>
-        {reviews.length > 0 ? (
-          <ul className='reviews'>
-            {reviews.map((review) => (
-              <li key={review.id} className="review-item">
-                <div className="review-header">
-                  <div
-                    className="review-avatar"
-                    style={{ backgroundColor: review.color }}
-                  >
-                    {review.username[0]}
-                  </div>
-                  <p className="review-username">{review.username}</p>
-                </div>
-                <p>{renderStars(review.rating)}</p>
-                <p className='reviews_desc'>{review.description}</p>
-              </li>
+    <>
+      <Header />
+      <div className="rating_reviews_container">
+        <h1 className="add_review_label">Add Your Review</h1>
+        <h1 className="hello_name">Hello {username}</h1>
+        <form className="star-rating-container" onSubmit={handleSubmit}>
+          <div className='star-rating'>
+            {[1, 2, 3, 4, 5].map((star, index) => (
+              <span
+                key={index}
+                className={`star ${rating >= star ? 'filled' : ''} ${hover >= star ? 'hover' : ''}`}
+                onMouseEnter={() => handleMouseEnter(star)}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleClick(star)}
+              >
+                ★
+              </span>
             ))}
-          </ul>
+          </div>
+          <textarea
+            placeholder="Write your review..."
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <button type="submit" className='submit-button'>
+            Submit
+          </button>
+        </form>
+        {isLoading ? ( 
+          <div className='loader'></div>
         ) : (
-          <p className='no_reviews'>No reviews yet. Why Can't you be the first.</p>
+          <div>
+            <h1 className="reviews_label">Reviews</h1>
+            {reviews.length > 0 ? (
+              <ul className='reviews'>
+                {reviews.map((review) => (
+                  <li key={review.id} className="review-item">
+                    <div className="review-header">
+                      <div
+                        className="review-avatar"
+                        style={{ backgroundColor: review.color }}
+                      >
+                        {review.username[0]}
+                      </div>
+                      <p className="review-username">{review.username}</p>
+                    </div>
+                    <p>{renderStars(review.rating)}</p>
+                    <p className='reviews_desc'>{review.description}</p>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className='no_reviews'>No reviews yet. Why Can't you be the first.</p>
+            )}
+          </div>
         )}
       </div>
-    </div>
     </>
   );
 };
