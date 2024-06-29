@@ -65,7 +65,7 @@ class SignupPage extends Component {
             </Link>
           </div>
         ) : (
-          <form className="login-container" onSubmit={this.onSubmitSignupDetails}>
+          <form className="signup-container" onSubmit={this.onSubmitSignupDetails}>
             <h1 className="login-head">Signup</h1>
             <div className="user-details-container">
               <label className="email" htmlFor="email">
@@ -111,9 +111,15 @@ class SignupPage extends Component {
             </div>
             {showErrorMessage && <p className="error_msg">{errorMessage}</p>}
             {!showSuccessMessage && (
+              <div className="buttons">
               <button type="submit" className="login-button">
                 Signup
               </button>
+              <Link to="/login"><button type="button" className="login-button">
+                Login
+            </button>
+            </Link>
+            </div>
             )}
           </form>
         )}
