@@ -21,7 +21,7 @@ class SearchResultsPage extends Component {
     const token = Cookies.get('jwtToken');
 
     try {
-      const response = await fetch(`http://localhost:3000/breweries/${searchType}/${searchQuery}`, {
+      const response = await fetch(`https://breweriesaddreviewsweb2.onrender.com/breweries/${searchType}/${searchQuery}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },

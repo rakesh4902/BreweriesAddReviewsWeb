@@ -28,7 +28,7 @@ const LoginPage = () => {
   const onSubmitLoginDetails = async (event) => {
     event.preventDefault();
     const userDetails = { email, password };
-    const url = 'http://localhost:3000/login/';
+    const url = 'https://breweriesaddreviewsweb2.onrender.com/login/';
 
     try {
       const response = await fetch(url, {

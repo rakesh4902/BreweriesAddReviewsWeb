@@ -24,7 +24,7 @@ class SignupPage extends Component {
     event.preventDefault();
     const { email, password, username } = this.state;
     const userDetails = { email, password, username };
-    const url = 'http://localhost:3000/register/';
+    const url = 'https://breweriesaddreviewsweb2.onrender.com/register/';
 
     try {
       const response = await fetch(url, {

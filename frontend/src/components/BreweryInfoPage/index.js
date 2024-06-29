@@ -20,7 +20,7 @@ const BreweryInfoPage = () => {
   const fetchUsername = async () => {
     const jwtToken = Cookies.get('jwtToken');
     try {
-      const response = await fetch('http://localhost:3000/user', {
+      const response = await fetch('https://breweriesaddreviewsweb2.onrender.com/user', {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${jwtToken}`,
@@ -42,7 +42,7 @@ const BreweryInfoPage = () => {
     const jwtToken = Cookies.get('jwtToken');
 
     try {
-      const response = await fetch(`http://localhost:3000/brewery/${id}/review`, {
+      const response = await fetch(`https://breweriesaddreviewsweb2.onrender.com/brewery/${id}/review`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ const BreweryInfoPage = () => {
   const fetchBreweryReviews = async () => {
     const jwtToken = Cookies.get('jwtToken');
     try {
-      const response = await fetch(`http://localhost:3000/brewery/${id}/reviews`, {
+      const response = await fetch(`https://breweriesaddreviewsweb2.onrender.com/brewery/${id}/reviews`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${jwtToken}`,

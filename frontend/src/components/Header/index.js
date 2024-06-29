@@ -21,7 +21,7 @@ const Header = ()=> {
     const fetchUsername = async () => {
         const jwtToken = Cookies.get('jwtToken');
         try {
-          const response = await fetch('http://localhost:3000/user', {
+          const response = await fetch('https://breweriesaddreviewsweb2.onrender.com/user', {
             headers: {
               'Content-Type': 'application/json',
               Authorization: `Bearer ${jwtToken}`,

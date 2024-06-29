@@ -1,5 +1,5 @@
 ###REGISTRATION OF USER###
-POST http://localhost:3000/register/
+POST https://breweriesaddreviewsweb1.onrender.com/register/
 Content-Type: application/json
 
 {
@@ -30,7 +30,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/login/
+POST https://breweriesaddreviewsweb2.onrender.com/login/
 Content-Type: application/json
 
 {
