@@ -39,6 +39,12 @@ Content-Type: application/json
 }
 
 ###
+GET https://breweriesaddreviewsweb2.onrender.com/users
+
+###
+GET https://breweriesaddreviewsweb2.onrender.com/reviews
+
+###
 GET http://localhost:3000/breweries/city/america
 
 ###

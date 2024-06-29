@@ -47,6 +47,12 @@ const initializeDbAndServer = async () => {
     // await db.exec(createUsersTableQuery);
     // await db.exec(createReviewsTableQuery);
 
+    // Retrieve and log all table names
+    const getTablesQuery = `
+      SELECT name FROM sqlite_master WHERE type='table';
+    `;
+    const tables = await db.all(getTablesQuery);
+    console.log("Tables in the database:", tables.map(table => table.name));
    
 
     // Start the server
@@ -138,6 +144,8 @@ app.get("/users", async (request, response) => {
     response.status(500).json({ error: error.message });
   }
 });
+
+
 
 // Middleware to verify JWT token
 const authenticateToken = (request, response, next) => {

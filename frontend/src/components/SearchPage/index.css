@@ -23,6 +23,7 @@
     font-weight: bold;
     border-top-left-radius: 35px;
     border-bottom-left-radius: 35px;
+    cursor: pointer;
 }
 
 .search_input{
