@@ -48,11 +48,11 @@ const initializeDbAndServer = async () => {
     // await db.exec(createReviewsTableQuery);
 
     // Retrieve and log all table names
-    // const getTablesQuery = `
-    //   SELECT name FROM sqlite_master WHERE type='table';
-    // `;
-    // const tables = await db.all(getTablesQuery);
-    // console.log("Tables in the database:", tables.map(table => table.name));
+    const getTablesQuery = `
+      SELECT name FROM sqlite_master WHERE type='table';
+    `;
+    const tables = await db.all(getTablesQuery);
+    console.log("Tables in the database:", tables.map(table => table.name));
    
 
     // Start the server
