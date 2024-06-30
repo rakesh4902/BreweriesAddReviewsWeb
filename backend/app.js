@@ -173,6 +173,25 @@ const authenticateToken = (request, response, next) => {
 
 
 const API_BASE_URL = 'https://api.openbrewerydb.org/v1/breweries';
+
+
+// Get brewery details by ID
+app.get('/brewery/:id', authenticateToken, async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/${id}`);
+    if (!response.ok) {
+      return res.status(response.status).json({ error: "Failed to fetch brewery details" });
+    }
+    const brewery = await response.json();
+    res.json(brewery);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
 // Search breweries by city
 app.get('/breweries/by_city/:city', authenticateToken, async (req, res) => {
   const city = req.params.city;
@@ -253,27 +272,7 @@ app.get("/brewery/:id/reviews", authenticateToken, async (req, res) => {
   }
 });
 
-app.delete("/brewery/:id/review", authenticateToken, async (req, res) => {
-  const { id } = req.params;
-  const { email, username } = req.user;
 
-  // Check if the review exists
-  const checkReviewQuery = `
-    SELECT * FROM reviews WHERE username = ? AND email = ? AND brewery_id = ?;
-  `;
-  const existingReview = await db.get(checkReviewQuery, username, email, id);
-
-  if (existingReview) {
-    // Delete the review
-    const deleteReviewQuery = `
-      DELETE FROM reviews WHERE username = ? AND email = ? AND brewery_id = ?;
-    `;
-    await db.run(deleteReviewQuery, username, email, id);
-    res.json({ message: "Review deleted successfully" });
-  } else {
-    res.status(404).json({ error: "Review not found" });
-  }
-});
 
 
 // Get username from DB

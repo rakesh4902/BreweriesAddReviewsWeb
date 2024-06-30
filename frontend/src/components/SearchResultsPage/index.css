@@ -1,49 +1,64 @@
-.brewery-results-container{
+.brewery-results-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.brewery-cards{
+.brewery-cards {
     display: flex;
     flex-direction: row;
-    width:90%;
+    width: 90%;
     flex-wrap: wrap;
+    margin: 20px;
 }
 
-.brewery-card{
-    width:400px;
-    background-color: rgba(42, 41, 41, 0.11);
-    margin: 10px;
-    padding: 10px;
+.brewery-card {
+    width: 400px;
+    background-color: #ffffff;
+    margin: 5px;
+    margin-bottom: 10px;
+    padding: 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Roboto';
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.type_city_name{
+.review-heading{
+    color:#1B2631;
+    font-family: 'Roboto';
+}
+
+
+.brewery-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 24px 0 rgba(0, 0, 0, 0.19);
+}
+
+.type_city_name {
     display: flex;
     margin-top: 0px;
 }
 
-.brewery-link{
+.brewery-link {
     text-decoration: none;
-    
 }
 
-.brewery_name{
-    color:black;
+.brewery_name {
+    color: #1B2631;
     font-family: 'Roboto';
     font-weight: bold;
     font-size: 25px;
 }
 
-.address{
-    color: black;
+.address {
+    color: #1B2631;
     margin-right: 5px;
     margin-bottom: 0px;
 }
 
-.span_addr{
+.span_addr {
     font-weight: bold;
     margin-right: 5px;
 }
@@ -59,10 +74,9 @@
     height: 80px;
     animation: spin 2s linear infinite;
     margin: 80px auto; 
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
-  
+}

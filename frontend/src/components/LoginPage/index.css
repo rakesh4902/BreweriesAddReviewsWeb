@@ -14,7 +14,7 @@
     justify-content: center;
     width:400px;
     height: 350px;
-    background-color: rgba(64, 64, 64, 0.2);
+    background-color: #1B2631;
     border-radius: 10px;
 }
 
@@ -22,6 +22,7 @@
     font-family: 'Roboto';
     font-size: 30px;
     font-weight: bold;
+    color:#ffffff;
 }
 
 .user-details-container{
@@ -30,7 +31,7 @@
 }
 
 .email{
-    color:black;
+    color:#ffffff;
     font-weight: bold;
     font-family: 'Roboto';
     margin-bottom: 2px;
@@ -38,7 +39,7 @@
 }
 
 .login-button{
-    background-color: black;
+    background-color: rgb(64, 55, 191);
     color:#ffffff;
     font-weight: bold;
     font-family: 'Roboto';

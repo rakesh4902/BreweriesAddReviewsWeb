@@ -6,6 +6,7 @@ import './index.css';
 
 const BreweryInfoPage = () => {
   const { id } = useParams();
+  const [brewery, setBrewery] = useState(null);
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(null);
   const [description, setDescription] = useState('');
@@ -14,9 +15,24 @@ const BreweryInfoPage = () => {
   const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
+    fetchBreweryDetails();
     fetchBreweryReviews();
     fetchUsername();
   }, [id]);
+
+  const fetchBreweryDetails = async () => {
+    try {
+      const response = await fetch(`https://breweriesaddreviewsweb2.onrender.com/brewery/${id}`);
+      if (response.ok) {
+        const data = await response.json();
+        setBrewery(data);
+      } else {
+        console.error('Failed to fetch brewery details');
+      }
+    } catch (error) {
+      console.error('Error fetching brewery details:', error);
+    }
+  };
 
   const fetchUsername = async () => {
     const jwtToken = Cookies.get('jwtToken');
@@ -107,6 +123,7 @@ const BreweryInfoPage = () => {
   return (
     <>
       <Header />
+      <div>
       <div className="rating_reviews_container">
         <h1 className="add_review_label">Add Your Review</h1>
         <h1 className="hello_name">Hello {username}</h1>
@@ -162,6 +179,28 @@ const BreweryInfoPage = () => {
           </div>
         )}
       </div>
+      <div>
+      {brewery &&
+              <>
+              
+                    <div className="brewery-card">
+                      <h1 className='brewery_name'>{brewery.name}</h1>
+                      <p className='address'><span className='span_addr'> Address:</span>{brewery.street}, {brewery.city}, {brewery.state}</p>
+                      <p className='address'><span className='span_addr'>Phone:</span> {brewery.phone || 'N/A'}</p>
+                      <p className='address'><span className='span_addr'>Website:</span> <a href={brewery.website_url || '#'}>{brewery.website_url ? brewery.website_url : 'N/A'}</a></p>
+                      <div className="type_city_name">
+                        <p className='address'><span className='span_addr'>State:</span>  {brewery.state}</p>
+                        <p className='address'><span className='span_addr'>City:</span> {brewery.city}</p>
+                      </div>
+                    </div>
+                
+                
+                  </>
+                  }
+             </div>
+             </div>
+             
+      
     </>
   );
 };
