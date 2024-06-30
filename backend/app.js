@@ -191,6 +191,29 @@ app.get('/brewery/:id', authenticateToken, async (req, res) => {
   }
 });
 
+// Get average rating for a brewery by ID
+app.get('/brewery/:id/average-rating', authenticateToken, async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const getAverageRatingQuery = `
+      SELECT AVG(rating) as averageRating
+      FROM reviews
+      WHERE brewery_id = ?;
+    `;
+    const result = await db.get(getAverageRatingQuery, id);
+
+    if (result) {
+      res.json({ averageRating: result.averageRating });
+    } else {
+      res.status(404).json({ error: "No reviews found for this brewery" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
 
 // Search breweries by city
 app.get('/breweries/by_city/:city', authenticateToken, async (req, res) => {
