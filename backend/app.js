@@ -48,11 +48,11 @@ const initializeDbAndServer = async () => {
     // await db.exec(createReviewsTableQuery);
 
     // Retrieve and log all table names
-    const getTablesQuery = `
-      SELECT name FROM sqlite_master WHERE type='table';
-    `;
-    const tables = await db.all(getTablesQuery);
-    console.log("Tables in the database:", tables.map(table => table.name));
+    // const getTablesQuery = `
+    //   SELECT name FROM sqlite_master WHERE type='table';
+    // `;
+    // const tables = await db.all(getTablesQuery);
+    // console.log("Tables in the database:", tables.map(table => table.name));
    
 
     // Start the server
@@ -128,23 +128,6 @@ app.post("/login/", async (request, response) => {
     }
   }
 });
-
-
-
-// Get all users
-app.get("/users", async (request, response) => {
-  try {
-    const getUsersQuery = `
-      SELECT *
-      FROM users;
-    `;
-    const users = await db.all(getUsersQuery);
-    response.status(200).json(users);
-  } catch (error) {
-    response.status(500).json({ error: error.message });
-  }
-});
-
 
 
 // Middleware to verify JWT token
@@ -294,8 +277,6 @@ app.get("/brewery/:id/reviews", authenticateToken, async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
-
 
 
 // Get username from DB

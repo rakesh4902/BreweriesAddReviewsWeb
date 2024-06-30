@@ -80,3 +80,26 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.star {
+    color: #ffd700; 
+    font-size: 24px; 
+}
+  
+.star.full {
+    color: #ffd700;
+
+}
+  
+.star.half {
+    color: #ffd700; 
+}
+  
+.star.empty {
+    color: #e0e0e0; 
+}
+
+.span_addr_rating{
+    font-weight: bold;
+    margin-right: 5px;
+}

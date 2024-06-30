@@ -31,9 +31,12 @@
     margin-top: 8px;
     margin-left: 10px;
     cursor: pointer;
+    color:#1B2631;
+    background-color: #ffffff;
+    border:0px;
 }
 
 .logout-button:hover{
     outline: none;
-    background-color:#ffffff;
+    color:#ffffff;
 }

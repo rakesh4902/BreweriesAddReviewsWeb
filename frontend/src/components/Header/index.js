@@ -1,5 +1,6 @@
 import {useState,useEffect} from 'react';
 import Cookies from 'js-cookie';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 import './index.css'; 
@@ -40,7 +41,7 @@ const Header = ()=> {
 
     return (
         <header className="header">
-            <h1 className="header-title">Brewery</h1>
+            <Link to ="/" className='brewery-link'><h1 className="header-title">Brewery</h1></Link>
             <div className="header-right">
                 <h1 className="welcome-message">Welcome {username}</h1>
                 <button className="logout-button" type="button" onClick={handleLogout}>Logout</button>

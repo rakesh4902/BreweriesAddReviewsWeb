@@ -75,6 +75,11 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJha2VzaG1vZGkwOTJAZ21haWwuY29tIiwidXNlcm5hbWUiOiJSYWtlc2giLCJpYXQiOjE3MTk2NDQ2NTR9.wjnDP6YAVgt8e-8yXP4G42px-OBlN4sQchWYRaaZhtA
 
 ###
-DELETE http://localhost:3000/brewery/9c5a66c8-cc13-416f-a5d9-0a769c87d318/review
+GET http://localhost:3000/brewery/9c5a66c8-cc13-416f-a5d9-0a769c87d318
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJha2VzaG1vZGkwOTJAZ21haWwuY29tIiwidXNlcm5hbWUiOiJSYWtlc2giLCJpYXQiOjE3MTk2NDQ2NTR9.wjnDP6YAVgt8e-8yXP4G42px-OBlN4sQchWYRaaZhtA
+
+###
+GET https://breweriesaddreviewsweb2.onrender.com/brewery/9c5a66c8-cc13-416f-a5d9-0a769c87d318/average-rating
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJha2VzaG1vZGkwOTJAZ21haWwuY29tIiwidXNlcm5hbWUiOiJSYWtlc2giLCJpYXQiOjE3MTk2NDQ2NTR9.wjnDP6YAVgt8e-8yXP4G42px-OBlN4sQchWYRaaZhtA

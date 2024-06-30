@@ -15,15 +15,21 @@
 }
 
 .success_msg{
-    color:rgb(9, 171, 9);
+    color:green;
     font-family: 'Roboto';
     font-weight: bold;
     font-size: 20px;
 }
 
+.submission-tick{
+    color:white;
+    background-color: green;
+    border-radius:100%;
+}
+
 .login-back-button{
-    background-color: black;
-    color:#ffffff;
+    background-color: #ffffff;
+    color:#1B2631;
     font-weight: bold;
     font-family: 'Roboto';
     border-radius: 5px;
@@ -32,4 +38,8 @@
     border:0px solid;
     margin-top: 10px;
     cursor: pointer;
+}
+
+.login-back-button:hover{
+    color:#ffffff;
 }

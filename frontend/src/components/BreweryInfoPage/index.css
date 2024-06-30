@@ -1,5 +1,21 @@
+.rating_brewery_details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+
 .rating_reviews_container{
-    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Roboto';
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height:300px;
+    width:400px;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 10px;
 }
 
 
@@ -62,7 +78,7 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
     width:80px;
-  }
+}
   
 button:hover {
     background-color: #0056b3;
@@ -87,7 +103,7 @@ button:hover {
     align-items: center;
 }
   
-  .review-avatar {
+.review-avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -96,25 +112,25 @@ button:hover {
     justify-content: center;
     color: #fff;
     margin-right: 10px;
-  }
+}
   
-  .review-username {
+.review-username {
     margin: 0;
-  }
+}
 
-  .review-username{
+.review-username{
     color:black;
     font-weight: bold;
     font-family: sans-serif;
-  }
+}
 
-  .reviews_desc{
+.reviews_desc{
     color: black;
     font-weight: 500;
     font-family: 'Roboto';
     margin-top: 0px;
     margin-bottom: 0px;
-  }
+}
 
 .review-item{
     margin-bottom: 20px;
@@ -125,4 +141,16 @@ button:hover {
     font-weight: bold;
     font-size: 20px;
     font-family: 'Roboto';
+}
+
+.brewery_details{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.rating{
+    font-weight: bold;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    margin-top: 10px;
 }

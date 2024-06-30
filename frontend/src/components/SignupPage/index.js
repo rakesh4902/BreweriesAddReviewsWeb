@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { TiTick } from "react-icons/ti";
 import './index.css'; 
 
 class SignupPage extends Component {
@@ -57,7 +58,9 @@ class SignupPage extends Component {
       <div className="login-border-container">
         {showSuccessMessage ? (
           <div className='login-container'>
-            <img src="https://res.cloudinary.com/dt54ntfw8/image/upload/v1719583985/grren_tick_p1r3a7.jpg" alt="success" className='success'/>
+           <div className="submission-tick" >
+                <TiTick size={60}/>
+            </div>
             <p className="success_msg">You have signed up successfully!</p>
             <Link to="/login"><button type="button" className="login-back-button">
               Click here to Login

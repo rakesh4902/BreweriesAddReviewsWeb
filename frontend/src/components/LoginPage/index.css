@@ -39,8 +39,8 @@
 }
 
 .login-button{
-    background-color: rgb(64, 55, 191);
-    color:#ffffff;
+    background-color: #ffffff;
+    color:#1B2631;
     font-weight: bold;
     font-family: 'Roboto';
     border-radius: 5px;
@@ -50,6 +50,10 @@
     margin-top: 10px;
     cursor: pointer;
     margin-right: 10px;
+}
+
+.login-button:hover{
+    color: #ffffff;
 }
 
 .error_msg{
