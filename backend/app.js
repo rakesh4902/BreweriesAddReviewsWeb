@@ -130,6 +130,10 @@ app.post("/login/", async (request, response) => {
 });
 
 
+
+
+
+
 // Middleware to verify JWT token
 const authenticateToken = (request, response, next) => {
   const authHeader = request.headers["authorization"];
@@ -152,6 +156,22 @@ const authenticateToken = (request, response, next) => {
     response.status(401).send("Invalid JWT Token");
   }
 };
+
+
+// Get all users
+app.get("/users", authenticateToken , async (request, response) => {
+  try {
+    const getUsersQuery = `
+      SELECT *
+      FROM users;
+    `;
+    const users = await db.all(getUsersQuery);
+    console.log(users)
+    response.status(200).json(users);
+  } catch (error) {
+    response.status(500).json({ error: error.message });
+  }
+});
 
 
 
@@ -277,6 +297,8 @@ app.get("/brewery/:id/reviews", authenticateToken, async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+
 
 
 // Get username from DB
