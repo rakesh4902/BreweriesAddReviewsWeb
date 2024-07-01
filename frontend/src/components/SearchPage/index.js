@@ -24,6 +24,7 @@ const SearchPage = () => {
         <>
             <Header />
             <div className="search-page-container">
+            <h1 className="review-heading">Search Breweries by Name, City, or Type</h1>
                 <div className="search-form">
                     <select 
                         value={searchType} 

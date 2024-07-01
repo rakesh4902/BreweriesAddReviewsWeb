@@ -89,4 +89,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJha2Vza
 GET https://breweriesaddreviewsweb2.onrender.com/users
 
 ###
+GET http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJha2VzaG1vZGkwOTJAZ21haWwuY29tIiwidXNlcm5hbWUiOiJSYWtlc2giLCJpYXQiOjE3MTk2NDQ2NTR9.wjnDP6YAVgt8e-8yXP4G42px-OBlN4sQchWYRaaZhtA
+
+### 
 GET https://breweriesaddreviewsweb2.onrender.com/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJha2VzaG1vZGkwOTJAZ21haWwuY29tIiwidXNlcm5hbWUiOiJSYWtlc2giLCJpYXQiOjE3MTk2NDQ2NTR9.wjnDP6YAVgt8e-8yXP4G42px-OBlN4sQchWYRaaZhtA
